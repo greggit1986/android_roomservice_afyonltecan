@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" remote="github" />
+  <project name="greggit1986/android_device_samsung_afyonlte-common" path="device/samsung/afyonlte-common" remote="github" />
+  <project name="greggit1986/android_device_samsung_msm8226-common" path="device/samsung/msm8226-common" remote="github" />
+  <project name="greggit1986/android_kernel_samsung_msm8226" path="kernel/samsung/msm8226" remote="github" />
+  <project name="greggit1986/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" />
+  <project name="greggit1986/android_vendor_samsung_afyonltecan" path="device/vendor/afyonltecan" remote="github" />
+  <project name="greggit1986/android_vendor_samsung_afyonlte-common" path="device/vendor/afyonlte-common" remote="github" />
+  <project name="greggit1986/android_vendor_samsung_msm8226-common" path="device/vendor/msm8226-common" remote="github" />
+  <project name="LineageOS/android_hardware_sony_timekeep" path="hardware/sony/timekeep" remote="github" />
+  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" />
+</manifest>
