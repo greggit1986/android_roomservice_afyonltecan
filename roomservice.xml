@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-<!--How to build - Remove this section before droping this file in the local manifest folder
-
-repo init --depth=1 -u https://github.com/LineageOS-UL/android.git -b lineage-19.1 --git-lfs
-repo sync -c
-
-How to build - Remove this section before droping this file in the local manifest folder/-->
-
 <!--My stuff /-->
-  <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-19.1" />
-  <project name="greggit1986/android_device_samsung_afyonlte-common" path="device/samsung/afyonlte-common" remote="github" revision="lineage-19.1" />
+  <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-20.0" />
+  <project name="greggit1986/android_device_samsung_afyonlte-common" path="device/samsung/afyonlte-common" remote="github" revision="lineage-20.0" />
   <project name="greggit1986/android_device_samsung_msm8226-common" path="device/samsung/msm8226-common" remote="github" revision="lineage-19.1" />
-  <project name="greggit1986/android_vendor_samsung_afyonltecan" path="vendor/samsung/afyonltecan" remote="github" revision="lineage-19.1" />
-  <project name="greggit1986/android_vendor_samsung_afyonlte-common" path="vendor/samsung/afyonlte-common" remote="github" revision="lineage-19.1" />
+  <project name="html6405/android_device_qcom_sepolicy-legacy" path="device/qcom/sepolicy-legacy" remote="github" revision="lineage-19.1" />
+  <project name="greggit1986/android_vendor_samsung_afyonltecan" path="vendor/samsung/afyonltecan" remote="github" revision="lineage-18.1" />
+  <project name="greggit1986/android_vendor_samsung_afyonlte-common" path="vendor/samsung/afyonlte-common" remote="github" revision="lineage-18.1" />
   <project name="greggit1986/android_vendor_samsung_msm8226-common" path="vendor/samsung/msm8226-common" remote="github" revision="lineage-18.1" />
   <project name="greggit1986/android_kernel_samsung_msm8226" path="kernel/samsung/msm8226" remote="github" revision="lineage-19.1" />
 
+<!--Modified LOSUL source stuff/-->
+<!--Build with the synced source first, only add this if build errors. Hopefully, it will work for you
+    rm -f XXXX/YYY/ZZZ (remove the repo first then clone what you need to replace)
+/-->
+  <project name="greggit1986/android_bootable_recovery" path="bootable/recovery" remote="github" revision="lineage-20.0" />
+  <project name="greggit1986/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-20.0UL-caf-8974" />
+  <project name="greggit1986/android_hardware_qcom_media" path="hardware/qcom-caf/msm8974/media" remote="github" revision="lineage-20.0UL-caf-8974" />
+  <project name="greggit1986/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-20.0_UL" />
+  <project name="greggit1986/android_vendor_lineage" path="vendor/lineage" remote="github" revision="lineage-20.0_UL" />
+  <project name="greggit1986/android_build_soong" path="build/soong" remote="github" revision="lineage-20.0_UL" />
+
 <!--html6405 stuff/-->
-<!--Note: some qcom-caf stuff might already merged into the lineageUL source/-->
-  <project name="html6405/android_device_qcom_sepolicy-legacy" path="device/qcom/sepolicy-legacy" remote="github" revision="lineage-19.1" />
+<!--Lot of other stuff to pick from there, but generate conflicts with source * you will need to pick specific commits for them:
   <project name="html6405/android_hardware_qcom_audio" path="hardware/qcom-caf/msm8974/audio" remote="github" revision="lineage-19.0-caf-8974" />
   <project name="html6405/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-19.0-caf-8974" />
   <project name="html6405/android_hardware_qcom_media" path="hardware/qcom-caf/msm8974/media" remote="github" revision="lineage-19.0-caf-8974" />
-
-<!--Lot of other stuff to pick from there, but generate conflicts with source * you will need to pick specific commits for them/-->
-  <!--project name="html6405/android_build_soong" path="android/build/soong" remote="github" revision="lineage-19.0" /-->
-  <!--SEE: https://github.com/html6405/android_build_soong/commit/31bd392595ad78ea3c168650b9b990e8bbe5ef0b - fix CAF hwcomposer.msm8226.so compilation (generated_kernel_includes issue) -->
-
+  <project name="html6405/android_build_soong" path="android/build/soong" remote="github" revision="lineage-19.0" />
+99% of my changes are a mashup of these and the LOSUL source. 
+/-->
   <!--more to be added later /-->
-  <!--SEE: more to be added later-->
 
 <!--LineageOS stuff /-->
-  <project name="LineageOS/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" revision="lineage-18.1" />
-  <project name="LineageOS/android_system_tools_dtbtool" path="system/tools/dtbtool" remote="github" revision="lineage-18.1" />
-  <project name="LineageOS/android_hardware_sony_timekeep" path="hardware/sony/timekeep" remote="github" revision="lineage-19.1" />
-  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-19.1" />
+  <project name="LineageOS/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" revision="lineage-20" />
 </manifest>
