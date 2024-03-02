@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+<!--How to build - Remove this section before droping the file in the local manifest folder
+
+repo init --depth=1 -u https://github.com/LineageOS-UL/android.git -b lineage-20.0 --git-lfs
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
+************************************************************
+If some repos might fail to sync, for example:
+++++++++++++++++++++++++++++++++++++
+GitCommandError: 'fetch --depth=1 --quiet --progress github --force --prune --recurse-submodules=no --no-tags +refs/heads/lineage-20.0:refs/remotes/github/lineage-20.0' on LineageOS/android_cts failed
+stdout: fatal: unable to access 'https://github.com/LineageOS/android_cts/': gnutls_handshake() failed: The TLS connection was non-properly terminated. 
+++++++++++++++++++++++++++++++++++++
+
+Do this (see https://forum.khadas.com/t/android-13-build-problems/21021/6):
+
+find .repo/ -iname "*android_cts.git"
++++> .repo/project-objects/LineageOS/android_cts.git
+rm -rf .repo/project-objects/LineageOS/android_cts.git cts +++> remove that repo
+repo sync -j4 cts  +++> manually clone
+************************************************************
+
+How to build - Remove this section before droping the file in the local manifest folder/-->
 <!--My stuff /-->
   <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-20.0" />
   <project name="greggit1986/android_device_samsung_afyonlte-common" path="device/samsung/afyonlte-common" remote="github" revision="lineage-20.0" />
