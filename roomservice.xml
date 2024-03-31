@@ -32,14 +32,17 @@ How to build - Remove this section before droping the file in the local manifest
 
 <!--Modified LOSUL source stuff/-->
 <!--Build with the synced source first, only add this if build errors. Hopefully, it will work for you
-    rm -f XXXX/YYY/ZZZ (remove the repo first then clone what you need to replace)
-/-->
+    rm -rf XX/XX/XX/XX(remove the repo first then clone what you need to replace)
   <project name="greggit1986/android_bootable_recovery" path="bootable/recovery" remote="github" revision="lineage-20.0" />
   <project name="greggit1986/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-20.0UL-caf-8974" />
   <project name="greggit1986/android_hardware_qcom_media" path="hardware/qcom-caf/msm8974/media" remote="github" revision="lineage-20.0UL-caf-8974" />
   <project name="greggit1986/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-20.0_UL" />
   <project name="greggit1986/android_vendor_lineage" path="vendor/lineage" remote="github" revision="lineage-20.0_UL" />
   <project name="greggit1986/android_build_soong" path="build/soong" remote="github" revision="lineage-20.0_UL" />
+  <project name="html6405/android_vendor_qcom_opensource_power" path="vendor/qcom/opensource/power" remote="github" revision="lineage-20.0" />
+
+In hardware/lineage/interfaces, bring back the power Hal repository: 
+https://github.com/html6405/android_hardware_lineage_interfaces/tree/lineage-20.0-r10/power
 
 <!--html6405 stuff/-->
 <!--Lot of other stuff to pick from there, but generate conflicts with source * you will need to pick specific commits for them:
