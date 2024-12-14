@@ -20,7 +20,7 @@ rm -rf .repo/project-objects/LineageOS/android_cts.git cts +++> remove that repo
 repo sync -j4 cts  +++> manually clone
 ************************************************************
 
-How to build - Remove this section before droping the file in the local manifest folder/-->
+How to build - Remove this section, create .repo/local_manifests folder and drop the roomservice.xml file in/-->
 <!--My stuff /-->
   <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-20.0" />
   <project name="greggit1986/android_device_samsung_afyonlte-common" path="device/samsung/afyonlte-common" remote="github" revision="lineage-20.0" />
