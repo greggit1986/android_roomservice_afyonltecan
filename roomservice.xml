@@ -36,6 +36,7 @@ How to build - Remove this section, create .repo/local_manifests folder and drop
   <remove-project name="LineageOS/android_hardware_samsung_nfc" />
   <remove-project name="LineageOS-UL/android_packages_modules_adb" />
   <remove-project name="LineageOS-UL/android_frameworks_opt_net_wifi" />
+  <remove-project name="LineageOS-UL/android_hardware_interfaces" />
 
 <!--My stuff /-->
   <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-21.0_rebased" />
