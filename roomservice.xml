@@ -7,6 +7,14 @@ repo sync -c
 
 How to build - Remove this section before droping this file in the local manifest folder/-->
 
+<!-- Removals - Might fail, do it manually if it is the case-->
+  <!--remove-project name="LineageOS-UL/android_hardware_qcom_audio" /-->
+  <remove-project name="LineageOS-UL/android_hardware_qcom_display" />
+  <remove-project name="LineageOS-UL/android_hardware_qcom_media" />
+  <remove-project name="LineageOS-UL/android_vendor_lineage" />
+  <remove-project name="LineageOS-UL/android_build_soong" />
+  <remove-project name="LineageOS-UL/android_bionic" />
+
 <!--My stuff /-->
   <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-19.1" />
   <project name="greggit1986/android_device_samsung_afyonlte-common" path="device/samsung/afyonlte-common" remote="github" revision="lineage-19.1" />
@@ -15,24 +23,27 @@ How to build - Remove this section before droping this file in the local manifes
   <project name="greggit1986/android_vendor_samsung_afyonlte-common" path="vendor/samsung/afyonlte-common" remote="github" revision="lineage-19.1" />
   <project name="greggit1986/android_vendor_samsung_msm8226-common" path="vendor/samsung/msm8226-common" remote="github" revision="lineage-18.1" />
   <project name="greggit1986/android_kernel_samsung_msm8226" path="kernel/samsung/msm8226" remote="github" revision="lineage-19.1" />
+  <project name="greggit1986/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-19.0-caf-8974" />
+  <project name="greggit1986/android_vendor_lineage" path="vendor/lineage" remote="github" revision="lineage-19.0_UL" />
+  <project name="greggit1986/android_build_soong" path="build/soong" remote="github" revision="lineage-19.1_UL" />
+  <project name="greggit1986/android_bionic" path="bionic" remote="github" revision="lineage-19.1_UL" />
 
 <!--html6405 stuff/-->
 <!--Note: some qcom-caf stuff might already merged into the lineageUL source/-->
-  <project name="html6405/android_device_qcom_sepolicy-legacy" path="device/qcom/sepolicy-legacy" remote="github" revision="lineage-19.1" />
-  <project name="html6405/android_hardware_qcom_audio" path="hardware/qcom-caf/msm8974/audio" remote="github" revision="lineage-19.0-caf-8974" />
-  <project name="html6405/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-19.0-caf-8974" />
+  <!--project name="html6405/android_device_qcom_sepolicy-legacy" path="device/qcom/sepolicy-legacy" remote="github" revision="lineage-19.1" />
+  <project name="html6405/android_hardware_qcom_audio" path="hardware/qcom-caf/msm8974/audio" remote="github" revision="lineage-19.0-caf-8974" /-->
   <project name="html6405/android_hardware_qcom_media" path="hardware/qcom-caf/msm8974/media" remote="github" revision="lineage-19.0-caf-8974" />
 
 <!--Lot of other stuff to pick from there, but generate conflicts with source * you will need to pick specific commits for them/-->
   <!--project name="html6405/android_build_soong" path="android/build/soong" remote="github" revision="lineage-19.0" /-->
   <!--SEE: https://github.com/html6405/android_build_soong/commit/31bd392595ad78ea3c168650b9b990e8bbe5ef0b - fix CAF hwcomposer.msm8226.so compilation (generated_kernel_includes issue) -->
-
   <!--more to be added later /-->
-  <!--SEE: more to be added later-->
 
 <!--LineageOS stuff /-->
   <project name="LineageOS/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" revision="lineage-18.1" />
-  <project name="LineageOS/android_system_tools_dtbtool" path="system/tools/dtbtool" remote="github" revision="lineage-18.1" />
-  <project name="LineageOS/android_hardware_sony_timekeep" path="hardware/sony/timekeep" remote="github" revision="lineage-19.1" />
   <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-19.1" />
+  <project name="LineageOS/android_external_sony_boringssl-compat" path="external/sony/boringssl-compat" remote="github" revision="lineage-18.1" />
+
+<!--Misc /-->
+  <project name="notmyst33d/libaptX" path="external/libaptX" remote="github" revision="main" />
 </manifest>
