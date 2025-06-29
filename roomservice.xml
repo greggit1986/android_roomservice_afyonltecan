@@ -20,29 +20,41 @@ rm -rf .repo/project-objects/LineageOS/android_cts.git cts +++> remove that repo
 repo sync -j4 cts  +++> manually clone
 ************************************************************
 
-How to build - Remove this section, create .repo/local_manifests folder and drop the roomservice.xml file in/-->
+How to build - Remove this section, create .repo/local_manifests folder and drop the roomservice.xml file END/-->
+
+<!-- Removals - Might fail, do it manually if it is the case-->
+  <!--remove-project name="LineageOS-UL/android_hardware_qcom_audio" /-->
+  <remove-project path="hardware/qcom/display"  name="LineageOS-UL/android_hardware_qcom_display" />
+  <remove-project path="hardware/qcom-caf/msm8974/display" name="LineageOS-UL/android_hardware_qcom_display" />
+  <!--remove-project name="LineageOS-UL/android_hardware_qcom_media" /-->
+  <remove-project name="LineageOS-UL/android_vendor_lineage" />
+  <remove-project name="LineageOS-UL/android_build_soong" />
+  <!--remove-project name="LineageOS-UL/android_bionic" /-->
+
 <!--My stuff /-->
   <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-20.0" />
   <project name="greggit1986/android_device_samsung_afyonlte-common" path="device/samsung/afyonlte-common" remote="github" revision="lineage-20.0" />
   <project name="greggit1986/android_device_samsung_msm8226-common" path="device/samsung/msm8226-common" remote="github" revision="lineage-20.0" />
-  <project name="greggit1986/android_vendor_samsung_afyonltecan" path="vendor/samsung/afyonltecan" remote="github" revision="lineage-18.1" />
-  <project name="greggit1986/android_vendor_samsung_afyonlte-common" path="vendor/samsung/afyonlte-common" remote="github" revision="lineage-18.1" />
-  <project name="greggit1986/android_vendor_samsung_msm8226-common" path="vendor/samsung/msm8226-common" remote="github" revision="lineage-18.1" />
-  <project name="greggit1986/android_kernel_samsung_msm8226" path="kernel/samsung/msm8226" remote="github" revision="lineage-19.1" />
+  <project name="greggit1986/android_vendor_samsung_afyonltecan" path="vendor/samsung/afyonltecan" remote="github" revision="lineage-20.0" />
+  <project name="greggit1986/android_vendor_samsung_afyonlte-common" path="vendor/samsung/afyonlte-common" remote="github" revision="lineage-20.0" />
+  <project name="greggit1986/android_vendor_samsung_msm8226-common" path="vendor/samsung/msm8226-common" remote="github" revision="lineage-20.0" />
+  <project name="greggit1986/android_kernel_samsung_msm8226" path="kernel/samsung/msm8226" remote="github" revision="lineage-20.0" />
+  <project name="greggit1986/android_vendor_lineage" path="vendor/lineage" remote="github" revision="lineage-20.0_UL" />
+  <project name="greggit1986/android_build_soong" path="build/soong" remote="github" revision="lineage-20.0_UL" />
 
 <!--Modified LOSUL source stuff/-->
 <!--Build with the synced source first, only add this if build errors. Hopefully, it will work for you
-    rm -rf XX/XX/XX/XX(remove the repo first then clone what you need to replace)
-  <project name="greggit1986/android_bootable_recovery" path="bootable/recovery" remote="github" revision="lineage-20.0" />
+    rm -rf XX/XX/XX/XX(remove the repo first then clone what you need to replace or use project-remove)-->
+  <!--project name="greggit1986/android_bootable_recovery" path="bootable/recovery" remote="github" revision="lineage-20.0" /-->
   <project name="greggit1986/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-20.0UL-caf-8974" />
-  <project name="greggit1986/android_hardware_qcom_media" path="hardware/qcom-caf/msm8974/media" remote="github" revision="lineage-20.0UL-caf-8974" />
-  <project name="greggit1986/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-20.0_UL" />
+  <!--project name="greggit1986/android_hardware_qcom_media" path="hardware/qcom-caf/msm8974/media" remote="github" revision="lineage-20.0UL-caf-8974" /-->
+  <!--project name="greggit1986/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-20.0_UL" /-->
   <project name="greggit1986/android_vendor_lineage" path="vendor/lineage" remote="github" revision="lineage-20.0_UL" />
   <project name="greggit1986/android_build_soong" path="build/soong" remote="github" revision="lineage-20.0_UL" />
-  <project name="html6405/android_vendor_qcom_opensource_power" path="vendor/qcom/opensource/power" remote="github" revision="lineage-20.0" />
+  <!--project name="html6405/android_vendor_qcom_opensource_power" path="vendor/qcom/opensource/power" remote="github" revision="lineage-20.0" /-->
 
-In hardware/lineage/interfaces, bring back the power Hal repository: 
-https://github.com/html6405/android_hardware_lineage_interfaces/tree/lineage-20.0-r10/power
+ <!--In hardware/lineage/interfaces, bring back the power Hal repository: 
+https://github.com/html6405/android_hardware_lineage_interfaces/tree/lineage-20.0-r10/power -->
 
 <!--html6405 stuff/-->
 <!--Lot of other stuff to pick from there, but generate conflicts with source * you will need to pick specific commits for them:
@@ -56,4 +68,9 @@ https://github.com/html6405/android_hardware_lineage_interfaces/tree/lineage-20.
 
 <!--LineageOS stuff /-->
   <project name="LineageOS/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" revision="lineage-20" />
+  <project name="LineageOS/android_external_sony_boringssl-compat" path="external/sony/boringssl-compat" remote="github" revision="lineage-18.1" />
+  <project path="hardware/samsung" remote="github" name="LineageOS/android_hardware_samsung" revision="lineage-20" />
+
+<!--Misc /-->
+  <project name="notmyst33d/libaptX" path="external/libaptX" remote="github" revision="main" />
 </manifest>
