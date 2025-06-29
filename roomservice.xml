@@ -3,7 +3,7 @@
 <!--How to build - Remove this section before droping this file in the local manifest folder
 
 repo init --depth=1 -u https://github.com/LineageOS-UL/android.git -b lineage-19.1 --git-lfs
-repo sync -c
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 How to build - Remove this section before droping this file in the local manifest folder/-->
 
