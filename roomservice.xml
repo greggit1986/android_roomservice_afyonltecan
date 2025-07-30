@@ -50,7 +50,6 @@ How to build - Remove this section, create .repo/local_manifests folder and drop
   <project name="greggit1986/android_vendor_lineage" path="vendor/lineage" remote="github" revision="lineage-21.0_UL" />
   <project name="retiredtab/android_packages_modules_adb" path="packages/modules/adb" remote="github" revision="lineage-21.0-qpr1" />
   <project name="greggit1986/android_frameworks_opt_net_wifi" path="frameworks/opt/net/wifi" remote="github" revision="lineage-21.0" />
-  <project name="greggit1986/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-21.0UL-caf-8974" />
   <project name="greggit1986/android_hardware_lineage_interfaces" path="hardware/lineage/interfaces" remote="github" revision="lineage-21.0_UL" />
   <project name="greggit1986/android_hardware_interfaces" path="hardware/interfaces" remote="github" revision="lineage-21.0_UL" />
   <project name="greggit1986/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-21.0_UL" />
