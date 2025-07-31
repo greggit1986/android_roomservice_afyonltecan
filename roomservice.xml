@@ -37,6 +37,7 @@ How to build - Remove this section, create .repo/local_manifests folder and drop
   <remove-project name="LineageOS-UL/android_packages_modules_adb" />
   <remove-project name="LineageOS-UL/android_frameworks_opt_net_wifi" />
   <remove-project name="LineageOS-UL/android_hardware_interfaces" />
+  <remove-project name="LineageOS/android_frameworks_base" />
 
 <!--My stuff /-->
   <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-21.0_rebased" />
@@ -54,4 +55,5 @@ How to build - Remove this section, create .repo/local_manifests folder and drop
   <project name="greggit1986/android_hardware_interfaces" path="hardware/interfaces" remote="github" revision="lineage-21.0_UL" />
   <project name="greggit1986/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-21.0_UL" />
   <project name="greggit1986/android_system_vold" path="system/vold" remote="github" revision="lineage-21.0_UL" />
+  <project name="greggit1986/android_frameworks_base" path="frameworks/base" remote="github" revision="lineage-21.0_UL-R1" />
 </manifest>
