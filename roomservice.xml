@@ -2,16 +2,17 @@
 <manifest>
 <!--How to build - Remove this section before droping the file in the local manifest folder
 ++++++++++++++++++++++++++++++++++++
-DO NOT USE THIS TO DOWNLOAD THE SOURCE, IT IS BROKEN (revision="refs/tags/android-14.0.0_r67" />)
- repo init --depth=1 -u https://github.com/LineageOS-UL/android.git -b lineage-21.0 --git-lfs
+TO DOWNLOAD THE SOURCE:
+repo init --depth=1 -u https://github.com/LineageOS-UL/android.git -b lineage-21.0 --git-lfs
+then:
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
 ++++++++++++++++++++++++++++++++++++
 
-INSTEAD USE THIS (revision="refs/tags/android-14.0.0_r55" />):
+IF FOR SOME REASONS, IT DOES NOT WORK AS EXPECTED (BROKEN SOURCE, WEIRD BUILD ERRORS,...), USE THIS INSTEAD (revision="refs/tags/android-14.0.0_r67" />):
 
-repo init -u https://github.com/LineageOS-UL/android.git -b 711f856c084b811e0371535d79ac7268787a35a9 -m default.xml --git-lfs --depth=1
-
+repo init -u https://github.com/LineageOS-UL/android.git -b a156f53737d9a413581b125ad81a0d9d62f50036 -m default.xml --git-lfs --depth=1
 then:
-
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 ************************************************************
