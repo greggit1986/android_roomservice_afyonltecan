@@ -16,9 +16,9 @@
   <remove-project name="LineageOS/android_device_lineage_sepolicy" />
   <remove-project name="LineageOS/android_build_soong" />
   <remove-project name="platform/prebuilts/build-tools" />
+  <remove-project name="LineageOS/android_frameworks_opt_telephony" />
   <!--remove-project name="LineageOS/android_hardware_samsung_nfc" />
   <remove-project name="LineageOS/android_hardware_samsung_nfc" />
-  <remove-project name="LineageOS-UL/android_packages_modules_adb" />
   <remove-project name="LineageOS-UL/android_frameworks_opt_net_wifi" /-->
 
 <!--My stuff /-->
@@ -38,6 +38,7 @@
   <project name="greggit1986/android_frameworks_av" path="frameworks/av" remote="github" revision="lineage-22.2_UL" />
   <project name="greggit1986/android_frameworks_native" path="frameworks/native" remote="github" revision="lineage-22.2_UL-R1" />
   <project name="greggit1986/android_frameworks_base" path="frameworks/base" remote="github" revision="lineage-22.2_UL-R1" />
+  <project name="greggit1986/android_frameworks_opt_telephony" path="frameworks/opt/telephony" remote="github" revision="lineage-22.2_UL-R1" />
   <project name="greggit1986/android_vendor_lineage" path="vendor/lineage" remote="github" revision="lineage-22.2_UL" />
   <project name="greggit1986/android_system_sepolicy" path="system/sepolicy" remote="github" revision="lineage-22.2_UL" />
   <project name="greggit1986/android_system_core" path="system/core" remote="github" revision="lineage-22.2_UL" />
@@ -51,8 +52,7 @@
   <project name="greggit1986/android_build_soong" path="build/soong" remote="github" revision="lineage-22.2_UL" />
   <project name="https://github.com/greggit1986/android_prebuilts_build-tools" path="prebuilts/build-tools" remote="github" revision="lineage-22.2_UL" />
 
-  <!--project name="retiredtab/android_packages_modules_adb" path="packages/modules/adb" remote="github" revision="lineage-21.0-qpr1" />
-  <project name="greggit1986/android_frameworks_opt_net_wifi" path="greggit1986/frameworks/opt/net/wifi" remote="github" revision="lineage-21.0" />
+  <!--project name="greggit1986/android_frameworks_opt_net_wifi" path="greggit1986/frameworks/opt/net/wifi" remote="github" revision="lineage-21.0" />
   <project name="greggit1986/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-21.0UL-caf-8974" />
   <project name="greggit1986/android_hardware_lineage_interfaces" path="hardware/lineage/interfaces" remote="github" revision="lineage-21.0_UL" /-->
 
