@@ -1,25 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+<!--How to build - Remove this section before droping the file in the local manifest folder
+++++++++++++++++++++++++++++++++++++
+TO DOWNLOAD THE SOURCE:
+repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs
+then:
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
+++++++++++++++++++++++++++++++++++++
+
+IF FOR SOME REASONS, IT DOES NOT WORK AS EXPECTED OR YOU DO NOT WANT TO DEAL WITH BUILD ERRORS, USE THIS INSTEAD (revision="refs/tags/android-15.0.0_r32" />):
+
+repo init -u https://github.com/LineageOS/android.git -b e64bf2e7417450cb61c27a6a8ab45b569bbe7355 -m default.xml --git-lfs --depth=1
+then:
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
+************************************************************
+some repos might fail to sync, for example:
+++++++++++++++++++++++++++++++++++++
+GitCommandError: 'fetch --depth=1 --quiet --progress github --force --prune --recurse-submodules=no --no-tags +refs/heads/lineage-21.0:refs/remotes/github/lineage-21.0' on LineageOS/android_cts failed
+stdout: fatal: unable to access 'https://github.com/LineageOS/android_cts/': gnutls_handshake() failed: The TLS connection was non-properly terminated. 
+++++++++++++++++++++++++++++++++++++
+
+Do this (see https://forum.khadas.com/t/android-13-build-problems/21021/6):
+
+find .repo/ -iname "*android_cts.git"
++++> .repo/project-objects/LineageOS/android_cts.git
+rm -rf .repo/project-objects/LineageOS/android_cts.git cts +++> remove that repo
+repo sync -j4 cts  +++> manually clone
+************************************************************
+How to build - Remove this section, create .repo/local_manifests folder and drop in the roomservice.xml file - end./-->
+
 <!-- Removals - Might fail, do it manually if it is the case-->
   <remove-project name="LineageOS/android_frameworks_native" />
-  <remove-project name="LineageOS/android_frameworks_av" />
   <remove-project name="LineageOS/android_frameworks_base" />
+  <remove-project name="LineageOS/android_frameworks_opt_telephony" />
   <remove-project name="LineageOS/android_vendor_lineage" />
   <remove-project name="LineageOS/android_system_sepolicy" />
   <remove-project name="LineageOS/android_system_core" />
-  <remove-project name="LineageOS/android_packages_services_Telephony" />
+  <!--remove-project name="LineageOS/android_packages_services_Telephony" /-->
   <remove-project name="LineageOS/android_hardware_qcom-caf_common" />
   <remove-project name="LineageOS/android_hardware_interfaces" />
-  <remove-project name="LineageOS/android_system_libhidl" />
-  <remove-project name="LineageOS/android_system_libhwbinder" />
+  <!--remove-project name="LineageOS/android_system_libhidl" /-->
   <remove-project name="LineageOS/android_build" />
   <remove-project name="LineageOS/android_device_lineage_sepolicy" />
   <remove-project name="LineageOS/android_build_soong" />
   <remove-project name="platform/prebuilts/build-tools" />
-  <remove-project name="LineageOS/android_frameworks_opt_telephony" />
-  <!--remove-project name="LineageOS/android_hardware_samsung_nfc" />
+  <remove-project name="LineageOS/android_art" />
+  <remove-project name="LineageOS/android_bionic" />
   <remove-project name="LineageOS/android_hardware_samsung_nfc" />
-  <remove-project name="LineageOS-UL/android_frameworks_opt_net_wifi" /-->
+  <remove-project name="LineageOS/android_packages_apps_ExactCalculator" />
+  <remove-project name="platform/external/perfetto" />
 
 <!--My stuff /-->
   <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-22.2" />
@@ -29,31 +60,32 @@
   <project name="greggit1986/android_vendor_samsung_msm8226-common" path="vendor/samsung/msm8226-common" remote="github" revision="lineage-22.2" />
   <project name="greggit1986/android_kernel_samsung_msm8226" path="kernel/samsung/msm8226" remote="github" revision="lineage-22.2" />
 
-<!--LineageOS stuff />
-  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-21" />
-  <project name="LineageOS/android_hardware_samsung_nfc" path="hardware/samsung/nfc" remote="github" revision="lineage-21.0" /-->
+<!--LineageOS stuff /-->
   <project path="hardware/sony/timekeep" name="LineageOS/android_hardware_sony_timekeep" revision="lineage-22.2" />
 
 <!--Modified LOS/LOSUL source stuff/-->
-  <project name="greggit1986/android_frameworks_av" path="frameworks/av" remote="github" revision="lineage-22.2_UL" />
   <project name="greggit1986/android_frameworks_native" path="frameworks/native" remote="github" revision="lineage-22.2_UL-R1" />
   <project name="greggit1986/android_frameworks_base" path="frameworks/base" remote="github" revision="lineage-22.2_UL-R1" />
   <project name="greggit1986/android_frameworks_opt_telephony" path="frameworks/opt/telephony" remote="github" revision="lineage-22.2_UL-R1" />
-  <project name="greggit1986/android_vendor_lineage" path="vendor/lineage" remote="github" revision="lineage-22.2_UL" />
-  <project name="greggit1986/android_system_sepolicy" path="system/sepolicy" remote="github" revision="lineage-22.2_UL" />
-  <project name="greggit1986/android_system_core" path="system/core" remote="github" revision="lineage-22.2_UL" />
-  <project name="greggit1986/android_packages_services_Telephony" path="system/core" remote="github" revision="lineage-22.2_UL" />
+  <project name="greggit1986/android_vendor_lineage" path="vendor/lineage" remote="github" revision="lineage-22.2_UL-R1" />
+  <project name="greggit1986/android_system_sepolicy" path="system/sepolicy" remote="github" revision="lineage-22.2" />
+  <project name="greggit1986/android_system_core" path="system/core" remote="github" revision="lineage-22.2" />
+  <!--project name="greggit1986/android_packages_services_Telephony" path="system/core" remote="github" revision="lineage-22.2_UL" /-->
   <project name="greggit1986/android_hardware_qcom-caf_common" path="hardware/qcom-caf/common" remote="github" revision="lineage-22.2_UL" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8974/Android.mk" />
   <project name="greggit1986/android_hardware_interfaces" path="hardware/interfaces" remote="github" revision="lineage-22.2_UL" />
-  <project name="greggit1986/android_system_libhidl" path="system/libhidl" remote="github" revision="lineage-22.2_UL" />
-  <project name="greggit1986/android_system_libhwbinder" path="system/libhwbinder" remote="github" revision="lineage-22.2_UL" />
+  <!--project name="greggit1986/android_system_libhidl" path="system/libhidl" remote="github" revision="lineage-22.2_UL" /-->
   <project name="greggit1986/android_build" path="build/make" remote="github" revision="lineage-22.2_UL" />
   <project name="greggit1986/android_device_lineage_sepolicy" path="device/lineage/sepolicy" remote="github" revision="lineage-22.2_UL" />
   <project name="greggit1986/android_build_soong" path="build/soong" remote="github" revision="lineage-22.2_UL" />
   <project name="https://github.com/greggit1986/android_prebuilts_build-tools" path="prebuilts/build-tools" remote="github" revision="lineage-22.2_UL" />
-
-  <!--project name="greggit1986/android_frameworks_opt_net_wifi" path="greggit1986/frameworks/opt/net/wifi" remote="github" revision="lineage-21.0" />
-  <project name="greggit1986/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-21.0UL-caf-8974" />
-  <project name="greggit1986/android_hardware_lineage_interfaces" path="hardware/lineage/interfaces" remote="github" revision="lineage-21.0_UL" /-->
+  <project name="https://github.com/greggit1986/android_art" path="art" remote="github" revision="lineage-22.2_UL" />
+  <project name="https://github.com/greggit1986/android_bionic" path="bionic" remote="github" revision="lineage-22.2_UL" />
+  <project name="greggit1986/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-22.2_UL" />
+  <project name="greggit1986/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-22.2_UL-caf-8974" />
+  <project name="greggit1986/android_hardware_qcom_media" path="hardware/qcom-caf/msm8974/media" remote="github" revision="lineage-22.2UL-caf-msm8974" />
+  <project name="greggit1986/android_hardware_qcom_audio" path="hardware/qcom-caf/msm8974/audio" remote="github" revision="lineage-22.2UL-caf-msm8974" />
+  <project name="greggit1986/android_packages_apps_ExactCalculator" path="packages/apps/ExactCalculator" remote="github" revision="lineage-22.2_UL" />
+  <project name="greggit1986/android_external_perfetto" path="external/perfetto" remote="github" revision="lineage-22.2_UL" />
 
 </manifest>
