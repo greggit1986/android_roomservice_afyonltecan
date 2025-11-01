@@ -84,7 +84,7 @@ How to build - Remove this section, create .repo/local_manifests folder and drop
     <linkfile src="tools" dest="build/tools" />
   </project>
   <project name="greggit1986/android_device_lineage_sepolicy" path="device/lineage/sepolicy" remote="github" revision="lineage-22.2_UL" />
-  <project name="LineageOS-UL/android_device_qcom_sepolicy" path="device/qcom/sepolicy-legacy" remote="github" groups="qcom,pdk-qcom" revision="lineage-22.2-legacy" />
+  <project name="greggit1986/android_device_qcom_sepolicy" path="device/qcom/sepolicy-legacy" remote="github" groups="qcom,pdk-qcom" revision="lineage-22.2-legacy" />
   <project name="greggit1986/android_build_soong" path="build/soong" remote="github" revision="lineage-22.2_UL" />
   <project name="https://github.com/greggit1986/android_prebuilts_build-tools" path="prebuilts/build-tools" remote="github" revision="lineage-22.2_UL" />
   <project name="https://github.com/greggit1986/android_art" path="art" remote="github" revision="lineage-22.2_UL" />
