@@ -76,6 +76,13 @@ How to build - Remove this section, create .repo/local_manifests folder and drop
   <project name="greggit1986/android_hardware_interfaces" path="hardware/interfaces" remote="github" revision="lineage-22.2_UL" />
   <!--project name="greggit1986/android_system_libhidl" path="system/libhidl" remote="github" revision="lineage-22.2_UL" /-->
   <project name="greggit1986/android_build" path="build/make" remote="github" revision="lineage-22.2_UL" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
   <project name="greggit1986/android_device_lineage_sepolicy" path="device/lineage/sepolicy" remote="github" revision="lineage-22.2_UL" />
   <project name="LineageOS-UL/android_device_qcom_sepolicy" path="device/qcom/sepolicy-legacy" remote="github" groups="qcom,pdk-qcom" revision="lineage-22.2-legacy" />
   <project name="greggit1986/android_build_soong" path="build/soong" remote="github" revision="lineage-22.2_UL" />
