@@ -9,7 +9,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 ++++++++++++++++++++++++++++++++++++
 
-IF FOR SOME REASONS, IT DOES NOT WORK AS EXPECTED OR YOU DO NOT WANT TO DEAL WITH BUILD ERRORS, USE THIS INSTEAD (revision="refs/tags/android-15.0.0_r32" />):
+IF FOR SOME REASONS, IT DOES NOT WORK AS EXPECTED OR YOU DO NOT WANT TO DEAL WITH BUILD ERRORS, USE THIS INSTEAD (revision="refs/tags/android-16.0.0_r1" />):
 
 repo init -u https://github.com/LineageOS/android.git -b 2a46cce5dff3a9a3ab98b3c25a7564084b34cd1f -m default.xml --git-lfs --depth=1
 then:
@@ -77,7 +77,7 @@ How to build - Remove this section, create .repo/local_manifests folder and drop
   https://github.com/Ultra-Legacy-Hippeastrum/android_bionic/commit/dabc8079dd6887a7e31b919ac4d340de134599b0
   https://github.com/Ultra-Legacy-Hippeastrum/android_device_lineage_sepolicy/commit/f17ad223bd4d8758159a763c25982145bb8e2518
 
-  https://github.com/Ultra-Legacy-Hippeastrum/android_frameworks_av/commit/e0b8d0eb56ca1b37edf6334404576e1f990c0251  +++++++++++CHECK IF THIS SOLVE AUDIO ISSUES-NOPE!!!++++++++++++++++++
+  https://github.com/Ultra-Legacy-Hippeastrum/android_frameworks_av/commit/e0b8d0eb56ca1b37edf6334404576e1f990c0251
 
   https://github.com/Ultra-Legacy-Hippeastrum/android_frameworks_base/commits/lineage-23.0/: cbeded7fd3a6d1a059132562b3b0a95235b9943a to ed2814be725998578c896c788b35dbde790407fd
   https://github.com/greggit1986/android_frameworks_base/commit/3e377d004db770c665b6b4f759f92d1dd21f192a
