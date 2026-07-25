@@ -3,7 +3,7 @@
 <!--How to build - Remove this section before droping the file in the local manifest folder
 ++++++++++++++++++++++++++++++++++++
 TO DOWNLOAD THE SOURCE:
-repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs
+repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-23.0 --git-lfs
 then:
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
@@ -11,7 +11,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 IF FOR SOME REASONS, IT DOES NOT WORK AS EXPECTED OR YOU DO NOT WANT TO DEAL WITH BUILD ERRORS, USE THIS INSTEAD (revision="refs/tags/android-15.0.0_r32" />):
 
-repo init -u https://github.com/LineageOS/android.git -b e64bf2e7417450cb61c27a6a8ab45b569bbe7355 -m default.xml --git-lfs --depth=1
+repo init -u https://github.com/LineageOS/android.git -b 2a46cce5dff3a9a3ab98b3c25a7564084b34cd1f -m default.xml --git-lfs --depth=1
 then:
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
@@ -32,50 +32,35 @@ repo sync -j4 cts  +++> manually clone
 How to build - Remove this section, create .repo/local_manifests folder and drop in the roomservice.xml file - end./-->
 
 <!-- Removals - Might fail, do it manually if it is the case-->
-  <remove-project name="LineageOS/android_frameworks_native" />
-  <remove-project name="LineageOS/android_frameworks_base" />
-  <remove-project name="LineageOS/android_frameworks_opt_telephony" />
-  <remove-project name="LineageOS/android_vendor_lineage" />
-  <remove-project name="LineageOS/android_system_sepolicy" />
-  <remove-project name="LineageOS/android_system_core" />
-  <!--remove-project name="LineageOS/android_packages_services_Telephony" /-->
+  <remove-project name="LineageOS/android_hardware_qcom_bt" />
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_power" />
   <remove-project name="LineageOS/android_hardware_qcom-caf_common" />
-  <remove-project name="LineageOS/android_hardware_interfaces" />
-  <!--remove-project name="LineageOS/android_system_libhidl" /-->
   <remove-project name="LineageOS/android_build" />
-  <remove-project name="LineageOS/android_device_lineage_sepolicy" />
-  <remove-project name="LineageOS/android_build_soong" />
-  <remove-project name="platform/prebuilts/build-tools" />
-  <remove-project name="LineageOS/android_art" />
-  <remove-project name="LineageOS/android_bionic" />
+  <remove-project name="LineageOS/android_hardware_interfaces" />
   <remove-project name="LineageOS/android_hardware_samsung_nfc" />
-  <remove-project name="LineageOS/android_packages_apps_ExactCalculator" />
-  <remove-project name="platform/external/perfetto" />
 
 <!--My stuff /-->
-  <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-22.2" />
-  <project name="greggit1986/android_device_samsung_msm8226-common" path="device/samsung/msm8226-common" remote="github" revision="lineage-22.2" />
-  <project name="greggit1986/android_vendor_samsung_afyonltecan" path="vendor/samsung/afyonltecan" remote="github" revision="lineage-22.2" />
-  <project name="greggit1986/android_vendor_samsung_afyonlte-common" path="vendor/samsung/afyonlte-common" remote="github" revision="lineage-22.2" />
-  <project name="greggit1986/android_vendor_samsung_msm8226-common" path="vendor/samsung/msm8226-common" remote="github" revision="lineage-22.2" />
-  <project name="greggit1986/android_kernel_samsung_msm8226" path="kernel/samsung/msm8226" remote="github" revision="lineage-22.2" />
+  <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-23.0" />
+  <project name="greggit1986/android_device_samsung_msm8226-common" path="device/samsung/msm8226-common" remote="github" revision="lineage-23.0" />
+  <project name="greggit1986/android_vendor_samsung_afyonltecan" path="vendor/samsung/afyonltecan" remote="github" revision="lineage-23.0" />
+  <project name="greggit1986/android_vendor_samsung_afyonlte-common" path="vendor/samsung/afyonlte-common" remote="github" revision="lineage-23.0" />
+  <project name="greggit1986/android_vendor_samsung_msm8226-common" path="vendor/samsung/msm8226-common" remote="github" revision="lineage-23.0" />
+  <project name="greggit1986/android_kernel_samsung_msm8226" path="kernel/samsung/msm8226" remote="github" revision="lineage-23.0" />
 
 <!--LineageOS stuff /-->
   <project path="hardware/sony/timekeep" name="LineageOS/android_hardware_sony_timekeep" revision="lineage-22.2" />
+  <project path="hardware/samsung" name="LineageOS/android_hardware_samsung" revision="lineage-23.0" />
 
 <!--Modified LOS/LOSUL source stuff/-->
-  <project name="greggit1986/android_frameworks_native" path="frameworks/native" remote="github" revision="lineage-22.2_UL-R1" />
-  <project name="greggit1986/android_frameworks_base" path="frameworks/base" remote="github" revision="lineage-22.2_UL-R1" />
-  <project name="greggit1986/android_frameworks_opt_telephony" path="frameworks/opt/telephony" remote="github" revision="lineage-22.2_UL-R1" />
-  <project name="greggit1986/android_vendor_lineage" path="vendor/lineage" remote="github" revision="lineage-22.2_UL-R1" />
-  <project name="greggit1986/android_system_sepolicy" path="system/sepolicy" remote="github" revision="lineage-22.2" />
-  <project name="greggit1986/android_system_core" path="system/core" remote="github" revision="lineage-22.2" />
-  <!--project name="greggit1986/android_packages_services_Telephony" path="system/core" remote="github" revision="lineage-22.2_UL" /-->
-  <project name="greggit1986/android_hardware_qcom-caf_common" path="hardware/qcom-caf/common" remote="github" revision="lineage-22.2_UL" />
+  <project name="greggit1986/android_hardware_qcom-caf_common" path="hardware/qcom-caf/common" remote="github" revision="lineage-23.0_UL" >
     <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8974/Android.mk" />
-  <project name="greggit1986/android_hardware_interfaces" path="hardware/interfaces" remote="github" revision="lineage-22.2_UL" />
-  <!--project name="greggit1986/android_system_libhidl" path="system/libhidl" remote="github" revision="lineage-22.2_UL" /-->
-  <project name="greggit1986/android_build" path="build/make" remote="github" revision="lineage-22.2_UL" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8974/Android.bp" />
+  </project>
+  <project name="greggit1986/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-22.2_UL-caf-8974" />
+  <project name="greggit1986/android_hardware_qcom_media" path="hardware/qcom-caf/msm8974/media" remote="github" revision="lineage-22.2UL-caf-msm8974" />
+  <project name="greggit1986/android_hardware_qcom_audio" path="hardware/qcom-caf/msm8974/audio" remote="github" revision="lineage-22.2UL-caf-msm8974" />
+  <project name="greggit1986/android_hardware_interfaces" path="hardware/interfaces" remote="github" revision="lineage-23.0_UL" />
+  <project name="greggit1986/android_build" path="build/make" remote="github" revision="lineage-23.0_UL" >
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
     <linkfile src="core" dest="build/core" />
@@ -83,17 +68,44 @@ How to build - Remove this section, create .repo/local_manifests folder and drop
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project name="greggit1986/android_device_lineage_sepolicy" path="device/lineage/sepolicy" remote="github" revision="lineage-22.2_UL" />
-  <project name="greggit1986/android_device_qcom_sepolicy" path="device/qcom/sepolicy-legacy" remote="github" groups="qcom,pdk-qcom" revision="lineage-22.2-legacy" />
-  <project name="greggit1986/android_build_soong" path="build/soong" remote="github" revision="lineage-22.2_UL" />
-  <project name="https://github.com/greggit1986/android_prebuilts_build-tools" path="prebuilts/build-tools" remote="github" revision="lineage-22.2_UL" />
-  <project name="https://github.com/greggit1986/android_art" path="art" remote="github" revision="lineage-22.2_UL" />
-  <project name="https://github.com/greggit1986/android_bionic" path="bionic" remote="github" revision="lineage-22.2_UL" />
-  <project name="greggit1986/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-22.2_UL" />
-  <project name="greggit1986/android_hardware_qcom_display" path="hardware/qcom-caf/msm8974/display" remote="github" revision="lineage-22.2_UL-caf-8974" />
-  <project name="greggit1986/android_hardware_qcom_media" path="hardware/qcom-caf/msm8974/media" remote="github" revision="lineage-22.2UL-caf-msm8974" />
-  <project name="greggit1986/android_hardware_qcom_audio" path="hardware/qcom-caf/msm8974/audio" remote="github" revision="lineage-22.2UL-caf-msm8974" />
-  <project name="greggit1986/android_packages_apps_ExactCalculator" path="packages/apps/ExactCalculator" remote="github" revision="lineage-22.2_UL" />
-  <project name="greggit1986/android_external_perfetto" path="external/perfetto" remote="github" revision="lineage-22.2_UL" />
+  <project name="greggit1986/android_device_qcom_sepolicy" path="device/qcom/sepolicy-legacy" remote="github" groups="qcom,pdk-qcom" revision="lineage-23.0-legacy" />
+  <project name="greggit1986/android_hardware_qcom_bt" path="hardware/qcom-caf/bt" remote="github" revision="lineage-23.0-caf_UL" />
+  <project name="greggit1986/android_vendor_qcom_opensource_power" path="vendor/qcom/opensource/power" remote="github" revision="lineage-23.0_UL" />
+
+<!--Patches to cherry-pick on top of LOS source/-->
+  <!--
+  https://github.com/Ultra-Legacy-Hippeastrum/android_bionic/commit/dabc8079dd6887a7e31b919ac4d340de134599b0
+  https://github.com/Ultra-Legacy-Hippeastrum/android_device_lineage_sepolicy/commit/f17ad223bd4d8758159a763c25982145bb8e2518
+
+  https://github.com/Ultra-Legacy-Hippeastrum/android_frameworks_av/commit/e0b8d0eb56ca1b37edf6334404576e1f990c0251  +++++++++++CHECK IF THIS SOLVE AUDIO ISSUES-NOPE!!!++++++++++++++++++
+
+  https://github.com/Ultra-Legacy-Hippeastrum/android_frameworks_base/commits/lineage-23.0/: cbeded7fd3a6d1a059132562b3b0a95235b9943a to ed2814be725998578c896c788b35dbde790407fd
+  https://github.com/greggit1986/android_frameworks_base/commit/3e377d004db770c665b6b4f759f92d1dd21f192a
+  https://github.com/LineageOS/android_frameworks_base/commit/53816cdb331335b7e7c63506a701e9a7556139a8
+
+  https://github.com/Ultra-Legacy-Hippeastrum/android_frameworks_native/commits/lineage-23.0/: f860c502bfa946b8ba5c696c2c722bd6c5efeaf9 to 1f879622de8959a42bc91c66a3b7b7faf5b2c36b
+  https://github.com/greggit1986/android_frameworks_native/commit/ee794d8034b9fda8b6e722ccf58a4ff6da795405
+  https://github.com/greggit1986/android_frameworks_native/commit/b22baa79d6adbdb43ccb44c9e7b214a2a7371ad8
+
+  https://github.com/LineageOS/android_hardware_libhardware/commit/dd2391995d66867571e3cdaa6ca7420b9e8c4f17
+
+  https://github.com/greggit1986/android_packages_apps_ExactCalculator/commit/120abcfe431742d030ab0eab3169fee35620726e
+
+  https://github.com/greggit1986/android_prebuilts_build-tools/commit/0a83edc0f087a3f0d34466a0442dbf56385cc21d
+
+  https://github.com/Ultra-Legacy-Hippeastrum/android_system_core/commits/lineage-23.0/: acc5a33dab93da9a14b23062685ee3c9224e615e to 1a2c91784389854c7b7f2c5f9c5d488a18191d36
+
+  https://github.com/Ultra-Legacy-Hippeastrum/android_system_libhidl/commit/98411b7c0292897273d62b744ba203e0dce85066
+  
+  https://github.com/Ultra-Legacy-Hippeastrum/android_system_libhwbinder/commit/8cb52e1c50b1f70912868c2eeced259efa5850e0
+
+  https://github.com/Ultra-Legacy-Hippeastrum/android_system_sepolicy/commit/ce070fb8a3aec4b76379cd39ada881267706022c
+
+  https://github.com/greggit1986/android_system_vold/commit/4c019bac149b7b3554786cb3b068955c39084ab9
+
+  https://github.com/greggit1986/android_vendor_lineage/commit/657f6da9314bd61c57493654a1c35f058e8db8be
+
+  https://github.com/Ultra-Legacy-Hippeastrum/android_system_tools_mkbootimg/commit/d96838c5ba6bc6b0fc565f862492a45646384600
+  -->
 
 </manifest>
