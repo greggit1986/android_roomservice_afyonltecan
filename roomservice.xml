@@ -40,10 +40,10 @@ How to build - Remove this section, create .repo/local_manifests folder and drop
   <remove-project name="LineageOS/android_hardware_samsung_nfc" />
 
 <!--My stuff /-->
-  <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-23.0" />
-  <project name="greggit1986/android_device_samsung_msm8226-common" path="device/samsung/msm8226-common" remote="github" revision="lineage-23.0" />
-  <project name="greggit1986/android_vendor_samsung_afyonltecan" path="vendor/samsung/afyonltecan" remote="github" revision="lineage-23.0" />
-  <project name="greggit1986/android_vendor_samsung_afyonlte-common" path="vendor/samsung/afyonlte-common" remote="github" revision="lineage-23.0" />
+  <project name="greggit1986/android_device_samsung_afyonltecan" path="device/samsung/afyonltecan" revision="lineage-23.0_QRILexperiment" />
+  <project name="greggit1986/android_device_samsung_msm8226-common" path="device/samsung/msm8226-common" remote="github" revision="lineage-23.0_QRILexperiment" />
+  <project name="greggit1986/android_vendor_samsung_afyonltecan" path="vendor/samsung/afyonltecan" remote="github" revision="lineage-23.0_QRILexperiment" />
+  <project name="greggit1986/android_vendor_samsung_afyonlte-common" path="vendor/samsung/afyonlte-common" remote="github" revision="lineage-23.0_QRILexperiment" />
   <project name="greggit1986/android_vendor_samsung_msm8226-common" path="vendor/samsung/msm8226-common" remote="github" revision="lineage-23.0" />
   <project name="greggit1986/android_kernel_samsung_msm8226" path="kernel/samsung/msm8226" remote="github" revision="lineage-23.0" />
 
@@ -107,5 +107,36 @@ How to build - Remove this section, create .repo/local_manifests folder and drop
 
   https://github.com/Ultra-Legacy-Hippeastrum/android_system_tools_mkbootimg/commit/d96838c5ba6bc6b0fc565f862492a45646384600
   -->
-
+  <!-- for Qrilexperiment -->
+    <!-- frameworks/opt/telephony -->
+  	<!--
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/767c19c689f3a9effaa99140f1d033edf8ef9b66
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/7c6ad85a92911be94c9f08d8cbf223c451cd6c1f
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/683bd294e6bcf931ef7f4db7f96932316c5f344b
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/1cdd0d27e1b2480e03029e6088d1213362fa81f7
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/70b723b410062cc3a3d45b84d1854f31ca1e0a17
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/008233242f61d78d1572f4e478cfda3d796fef11
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/26f5bdb6fa3fe9975f5f26be380c13d88136c867
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/67e8eb6daee209a6fce1b0e2edbd35a4d3cab3c8
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/a95a565a02e7f3909fbf38b0078143c6a5a16837
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/1ea2f3f5452ec08620e1b820486ee38a54d99972
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/d1de89adab828039ac065f6d41246c88c1f5828d
+	https://github.com/LineageOS-Awful-UL/android_frameworks_opt_telephony/commit/c367eeeee0023682bbbae3651a08f37c81e4353a
+	https://github.com/LineageOS/android_frameworks_opt_telephony/commit/0d7ee8daef82c6f1af0278129612befa761c1288
+	https://github.com/LineageOS-UL/android_frameworks_opt_telephony/commit/9ccd255b74ce00d89ab4738ac06a73c33a1a6b8e
+	https://github.com/LineageOS-UL/android_frameworks_opt_telephony/commit/28c435aabe7903202701b6783cefa951d19d9116
+	https://github.com/LineageOS-UL/android_frameworks_opt_telephony/commit/ce1ca6b23a3e5003ebd4cab4b203706b52860a9a
+	https://github.com/LineageOS-UL/android_frameworks_opt_telephony/commit/adc573167e716e388de3e9ac9fb32ec202272caa 
+	-->
+    <!-- frameworks/base -->
+  	<!--
+	https://github.com/LineageOS-UL/android_frameworks_base/commit/b299255b248ecbec7ab587b3eefa917ce88fbbf4
+	https://github.com/LineageOS-UL/android_frameworks_base/commit/99bf7f6e7a29aa66bee2c712c322f64d3bb1cf82 
+	-->
+    <!-- packages/services/telephony -->
+  	<!--
+	https://github.com/LineageOS-UL/android_frameworks_base/commit/b299255b248ecbec7ab587b3eefa917ce88fbbf4
+	https://github.com/LineageOS-UL/android_frameworks_base/commit/99bf7f6e7a29aa66bee2c712c322f64d3bb1cf82 
+	+ manualy remove unnecessary @Override in src/com/android/phone/PhoneInterfaceManager.java, L8201
+	-->
 </manifest>
